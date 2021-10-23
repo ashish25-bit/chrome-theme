@@ -1,0 +1,32 @@
+/* time container */
+.main-container .time {
+  font-size: 3vw;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-family: Aldrich-Regular;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  position: relative;
+}
+
+.time .ctime {
+  justify-self: right;
+}
+
+.time .account {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.time a {
+  color: #fff;
+}

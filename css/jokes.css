@@ -1,0 +1,39 @@
+.section.jokes {
+  position: relative;
+}
+
+.section.jokes .content {
+  color: white;
+  display: grid;
+  padding: 20px;
+  font-size: 1.1vw;;
+  align-content: center;
+  pointer-events: none;
+}
+
+.is-safe-container {
+  position: absolute;
+  z-index: var(--z-index-jokes-is-safe);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: is-safe-anim 0.4s ease forwards;
+  opacity: 0;
+}
+
+@keyframes is-safe-anim {
+  100% {
+    opacity: 1;
+  }
+}
+
+.is-safe-container.safe {
+  background: #006a00;
+}
+
+.is-safe-container.not-safe {
+  background: #6c0000;
+}

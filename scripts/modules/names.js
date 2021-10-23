@@ -1,0 +1,20 @@
+export const FILENAMES = [
+  "../assets/david-gilmour.jpg",
+  "../assets/elton-john.jpg",
+  "../assets/jimmy-page.jpg",
+  "../assets/la-la-land1.jpg",
+  "../assets/led-zeppelin.jpg",
+  "../assets/manchester-united-logo.jpg",
+  "../assets/manchester-united.jpg",
+  "../assets/pink-floyd.jpg",
+  "../assets/queens.jpg",
+  "../assets/real-madrid-logo.jpg",
+  "../assets/real-madrid1.jpg",
+  "../assets/real-madrid2.jpg",
+  "../assets/ronaldo1.jpg",
+  "../assets/taylor-swift-folkore.jpg",
+  "../assets/the-beatles.jpg",
+  "../assets/ucl.jpg",
+  "../assets/wish-you-were-here.jpg",
+];
+Object.freeze(FILENAMES);

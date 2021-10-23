@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 500px;
+  height: 500px;
+  background-color: #323232;
+  padding: 20px;
+  font-family: Poppins-Regular;
+}
+
+.container {
+  background-color: #323232;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+h1, h2, h3 {
+  font-family: Quicksand-Medium;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+input, button, input[type='submit'], ::placeholder {
+  outline: none;
+  font-family: Poppins-Regular;
+}
+
+input[type='submit'],
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.add form {
+  margin: 20px 0;
+}
+
+.add input[type='text'],
+.add input[type='email'],
+.add input[type='submit'] {
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: calc(100% - 40px);
+  background-color: #000000;
+  border: none;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.add input[type='submit'] {
+  width: 100%;
+}
+
+.edit {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-transform: uppercase;
+  background: #707070;
+  color: #fff;
+}

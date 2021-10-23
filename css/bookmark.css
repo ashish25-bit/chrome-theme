@@ -1,0 +1,30 @@
+.section.bookmarks h2 {
+  text-align: left;
+  margin: 0 20px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #fff;
+}
+.section.bookmarks > .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  grid-gap: 20px 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.section.bookmarks .bookmark {
+  background-color: var(--section-elements-background-color);
+  color: #fff;
+  font-family: Poppins-Regular;
+  text-align: center;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  position: relative;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+}
+
+.section.bookmarks .bookmark:hover {
+  background-color: var(--section-elements-background-color-hover);
+}

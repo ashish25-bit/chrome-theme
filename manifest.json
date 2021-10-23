@@ -1,0 +1,39 @@
+{
+  "action": {
+    "default_title": "Chrome Theme",
+    "defualt_icon": "./icons/icon.png",
+    "default_popup": "./views/popup.html"
+  },
+  "chrome_url_overrides": {
+  "newtab": "views/display.html"
+  },
+  "description": "Theme for chrome",
+  "name": "Chrome Theme",
+  "offline_enabled": true,
+  "optional_permissions": [
+    "topSites"
+  ],
+  "permissions": [
+    "unlimitedStorage",
+    "identity",
+    "identity.email",
+    "tabs",
+    "bookmarks",
+    "storage",
+    "activeTab",
+    "alarms"
+  ],
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["scripts/chrome/interact.js"],
+    "run_at": "document_end"
+  }],
+  "icons": {
+    "16": "./icons/icon.png",
+    "32": "./icons/icon.png",
+    "48": "./icons/icon.png",
+    "128": "./icons/icon.png"
+  },
+  "version": "1.0.0",
+  "manifest_version": 3
+}

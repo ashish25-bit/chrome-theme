@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>New Tab</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="../icons/icon.png"/>
+    <link rel="stylesheet" href="../css/fonts.css" type="text/css">
+    <link rel="stylesheet" href="../css/display.css" type="text/css">
+  </head>
+  <body>
+    <div class="img-container">
+      <img src="../assets/la-la-land1.jpg" alt="background-image">
+      <img src="../assets/la-la-land1.jpg" alt="background-image">
+      <div class="overlay"></div>
+    </div>
+    <div class="main-container">
+      <div class="time">
+        <div class="ctime"></div>
+        <div class="session"></div>
+        <div class="account"></div>
+      </div>
+
+      <div class="gridSection">
+
+        <div class="section bookmarks"></div>
+
+        <div class="section shortcuts">
+          <h2 class="heading">Shortcuts</h2>
+          <div class="content"></div>
+        </div>
+
+        <div class="section todo">
+          <h2 class="heading">Todo</h2>
+          <div class="content"></div>
+        </div>
+
+        <div class="section cryptoprice">
+          <h2 class="heading">Crypto</h2>
+          <div class="content"></div>
+        </div>
+
+        <div class="section jokes" title="Double click to change the joke">
+          <div class="content"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="overlay-modal"></div>
+    <footer><div>
+      <button class="apps" data-btn-type='apps'>Apps</button>
+      <button class="accounts" data-btn-type='accounts'>Accounts</button>
+      <button class="toggle" title="toggle to show only background image">
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </button>
+    </div></footer>
+
+    <script src="../scripts/modules/formatter.js"></script>
+    <script type="module" src="../scripts/display.js"></script>
+    <script type="module" src="../scripts/time.js"></script>
+  </body>
+</html>
