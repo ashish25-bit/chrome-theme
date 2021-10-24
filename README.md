@@ -1,4 +1,10 @@
 # CHROME-THEME
 
 #### PREVIEW
-![Posting event details Page](images/preview.gif)
+![Preview](images/preview.PNG)
+
+#### POPUP
+![Popup](images/popup.PNG)
+
+#### EDIT PAGE
+![Edit](images/edit.PNG)

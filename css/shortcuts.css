@@ -51,6 +51,14 @@
   transition: all 0.3s ease;
 }
 
+.shortcuts .content .shortcut p {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 0 auto;
+}
+
 .section.shortcuts .content .shortcut > button:hover {
   background: rgb(70, 70, 70);;
 }
@@ -63,3 +71,4 @@
 .section.shortcuts .content .shortcut a {
   color: #fff;
 }
+
