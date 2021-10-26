@@ -16,7 +16,7 @@ async function getPrice(currency_pair) {
 
   try {
     const { data } = await (await fetch(url)).json();
-    const num = parseFloat(data.amount);
+    const num = (parseFloat(data.amount)).toFixed(2);
     return num;
   }
   catch (err) {

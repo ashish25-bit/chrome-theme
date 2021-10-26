@@ -1,0 +1,29 @@
+@media only screen and (max-width: 740px) {
+  .todo .list button {
+    right: 5px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .section.jokes {
+    display: none;
+  }
+  .section.todo {
+    grid-column: col-start / span 2;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .section.todo,
+  .section.cryptoprice {
+    display: none;
+  }
+  footer button {
+    margin-right: 15px;
+  }
+  .section.bookmarks,
+  .section.shortcuts {
+    grid-column: col-start / span col-end;
+  }
+}
+
