@@ -48,6 +48,10 @@ footer button {
   overflow-x: hidden;
 }
 
+.overlay-modal .footer-content > .content.accounts {
+  height: calc(100% - 70px);
+}
+
 .overlay-modal .footer-content > .content::-webkit-scrollbar {
   width:7px;
 }
@@ -107,14 +111,28 @@ footer button {
 .overlay-modal[data-active-tab="accounts"] .footer-content .accounts .account {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
   border-bottom: 1px #444 solid;
   font-size: 13px;
+  padding-bottom: 10px;
+}
+
+.overlay-modal[data-active-tab="accounts"] .footer-content .accounts .account:not(:last-of-type) {
+  margin-bottom: 20px;
 }
 
 .overlay-modal[data-active-tab="accounts"] .footer-content .accounts .account a:last-of-type {
   text-align: right;
+}
+
+.overlay-modal[data-active-tab="accounts"] .footer-content .additional-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  margin-top: 10px;
+}
+
+.overlay-modal[data-active-tab="accounts"] .footer-content .additional-links a {
+  color: #fff;
 }
 
 /* TOGGLE FULL SIZE BTN */
@@ -176,3 +194,4 @@ footer button {
 .toggle .slider.round:before {
   border-radius: 50%;
 }
+

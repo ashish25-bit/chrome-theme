@@ -11,7 +11,7 @@ export const CRYPTO_PRICE_API = "https://api.coinbase.com/v2";
 export const CRYPTO_NAME = {
   bitcoin: "BTC-INR",
   ethereum: "ETH-INR",
-  'doge Coin': "DOGE-INR"
+  "doge Coin": "DOGE-INR",
 };
 Object.freeze(CRYPTO_NAME);
 
@@ -27,46 +27,65 @@ export const DELETE_SHORTCUT_ICON = `<svg width="24" height="24" viewBox="0 0 24
 export const KEYS = {
   todos: "todos",
   explicit: "explicit",
-  shortcut: 'shortcuts',
-  accounts: 'accounts'
+  shortcut: "shortcuts",
+  accounts: "accounts",
 };
 Object.freeze(KEYS);
 
 export const JOKES_API_URL = "https://v2.jokeapi.dev/joke/Any";
-export const JOKES_API_URL_SAFE ="https://v2.jokeapi.dev/joke/Any?blacklistFlags=explicit";
+export const JOKES_API_URL_SAFE =
+  "https://v2.jokeapi.dev/joke/Any?blacklistFlags=explicit";
 export const FALLBACK_JOKE = [
   "What's the difference between a feminist and a grenade?",
   "The grenade actually accomplishes something when it triggers.",
 ];
 
 export const LOGOS = {
-  calendar: { src: "Calendar.png", link: "https://www.youtube.com/" },
-  chat: { src: "Chat.png", link: "https://www.youtube.com/" },
-  classroom: { src: "CLassroom.png", link: "https://www.youtube.com/" },
-  cloud: { src: "Cloud.png", link: "https://www.youtube.com/" },
-  contacts: { src: "Contacts.png", link: "https://www.youtube.com/" },
-  docs: { src: "Docs.png", link: "https://www.youtube.com/" },
-  drive: { src: "Drive.png", link: "https://www.youtube.com/" },
-  earth: { src: "Earth.png", link: "https://www.youtube.com/" },
-  firebase: { src: "Firebase.png", link: "https://www.youtube.com/" },
-  forms: { src: "Forms.png", link: "https://www.youtube.com/" },
-  gmail: { src: "Gmail.png", link: "https://www.youtube.com/" },
-  maps: { src: "Maps.png", link: "https://www.youtube.com/" },
-  meet: { src: "Meet.png", link: "https://www.youtube.com/" },
-  news: { src: "News.png", link: "https://www.youtube.com/" },
-  photos: { src: "Photos.png", link: "https://www.youtube.com/" },
-  play: { src: "Play.png", link: "https://www.youtube.com/" },
-  search: { src: "Search.png", link: "https://www.youtube.com/" },
-  sheets: { src: "Sheets.png", link: "https://www.youtube.com/" },
-  shopping: { src: "Shopping.png", link: "https://www.youtube.com/" },
-  slides: { src: "Slides.png", link: "https://www.youtube.com/" },
-  translate: { src: "Translate.png", link: "https://www.youtube.com/" },
+  drive: { src: "Drive.png", link: "https://drive.google.com/drive/my-drive" },
+  docs: { src: "Docs.png", link: "https://docs.google.com/document/u/0/" },
+  sheets: {
+    src: "Sheets.png",
+    link: "https://docs.google.com/spreadsheets/u/0/",
+  },
+  slides: {
+    src: "Slides.png",
+    link: "https://docs.google.com/presentation/u/0/",
+  },
+  photos: { src: "Photos.png", link: "https://photos.google.com/" },
+  classroom: {
+    src: "CLassroom.png", 
+    link: "https://classroom.google.com/u/0/h",
+  },
+  gmail: { src: "Gmail.png", link: "https://mail.google.com/mail/u/0/" },
+  meet: { src: "Meet.png", link: "https://meet.google.com/" },
   youtube: { src: "Youtube.png", link: "https://www.youtube.com/" },
+  search: { src: "Search.png", link: "https://www.google.co.in/webhp" },
+  chat: { src: "Chat.png", link: "https://mail.google.com/chat/u/0/" },
+  calendar: {
+    src: "Calendar.png",
+    link: "https://calendar.google.com/calendar/u/0/r",
+  },
+  cloud: { src: "Cloud.png", link: "https://cloud.google.com/" },
+  contacts: { src: "Contacts.png", link: "https://contacts.google.com/" },
+  earth: { src: "Earth.png", link: "https://earth.google.com/web/" },
+  firebase: { src: "Firebase.png", link: "https://firebase.google.com/" },
+  forms: { src: "Forms.png", link: "https://docs.google.com/forms/u/0/" },
+  maps: { src: "Maps.png", link: "https://www.google.co.in/maps" },
+  news: {
+    src: "News.png",
+    link: "https://news.google.com/topstories?hl=en-IN&gl=IN&ceid=IN:en",
+  },
+  play: { src: "Play.png", link: "https://play.google.com/store" },
+  shopping: { src: "Shopping.png", link: "https://shopping.google.co.in/" },
+  translate: { src: "Translate.png", link: "https://translate.google.co.in/" },
 };
 Object.freeze(LOGOS);
 
 export const LINKS = {
   email: "https://mail.google.com/mail/u/%s/#inbox",
-  account: "https://www.google.com/webhp?authuser=%s"
-}
+  account: "https://www.google.com/webhp?authuser=%s",
+};
 Object.freeze(LINKS);
+
+export const ADD_ACCOUNT = "https://accounts.google.com/AddSession/signinchooser?hl=en&continue=https%3A%2F%2Fwww.google.com%3Fhl%3Den-US&ec=GAlA8wE&flowName=GlifWebSignIn&flowEntry=AddSession";
+export const SIGNOUT_ALL_ACCOUNTS = "https://accounts.google.com/Logout?hl=en&amp;continue=https://www.google.com%3Fhl%3Den-US&amp;timeStmp=1635072090&amp;secTok=.AG5fkS9R6Q-LjO3FK83ljfYZc-R8kqQzFQ&amp;ec=GAdA8wE";

@@ -1,4 +1,4 @@
-import { LOGOS, $, LINKS } from '../modules/constants.js';
+import { LOGOS, $, LINKS, ADD_ACCOUNT, SIGNOUT_ALL_ACCOUNTS } from '../modules/constants.js';
 import getElement from '../modules/getElement.js';
 import getAllAccounts from '../modules/getAllAccounts.js';
 
@@ -33,6 +33,12 @@ export async function openContentForFooter(e) {
 
   section.appendChild(content);
   overlayModal.appendChild(section);
+
+  if (type === "accounts") {
+    const div = getElement({ classes: ['additional-links'] });
+    div.innerHTML = `<a href=${ADD_ACCOUNT} target='_blank'>Add account</a><a href=${SIGNOUT_ALL_ACCOUNTS} target='_blank'>Sign out of all accounts</a>`;
+    section.appendChild(div);
+  }
 }
 
 function addApps(parent, classes) {
@@ -64,6 +70,59 @@ export async function addAccounts(parent, classes) {
   const accounts = await getAllAccounts();
 
   let index = 0;
+  for (const email of accounts) {
+    const element = getElement({ classes: ['account'] });
+
+    const emailLink = LINKS.email.format(index);
+    const accountLink = LINKS.account.format(index);
+
+    element.innerHTML = `<a href=${accountLink}>${email}</a><a href=${emailLink}>mail</a>`
+
+    parent.appendChild(element);
+    index++;
+  }
+
+  index = 0;
+  for (const email of accounts) {
+    const element = getElement({ classes: ['account'] });
+
+    const emailLink = LINKS.email.format(index);
+    const accountLink = LINKS.account.format(index);
+
+    element.innerHTML = `<a href=${accountLink}>${email}</a><a href=${emailLink}>mail</a>`
+
+    parent.appendChild(element);
+    index++;
+  }
+
+  index = 0;
+  for (const email of accounts) {
+    const element = getElement({ classes: ['account'] });
+
+    const emailLink = LINKS.email.format(index);
+    const accountLink = LINKS.account.format(index);
+
+    element.innerHTML = `<a href=${accountLink}>${email}</a><a href=${emailLink}>mail</a>`
+
+    parent.appendChild(element);
+    index++;
+  }
+
+
+  index = 0;
+  for (const email of accounts) {
+    const element = getElement({ classes: ['account'] });
+
+    const emailLink = LINKS.email.format(index);
+    const accountLink = LINKS.account.format(index);
+
+    element.innerHTML = `<a href=${accountLink}>${email}</a><a href=${emailLink}>mail</a>`
+
+    parent.appendChild(element);
+    index++;
+  }
+
+  index = 0;
   for (const email of accounts) {
     const element = getElement({ classes: ['account'] });
 
