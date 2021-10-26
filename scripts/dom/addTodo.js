@@ -1,4 +1,4 @@
-import { $, DELETE_TODO_ICON, KEYS } from "../modules/constants.js";
+import { $, DELETE_ICON, KEYS } from "../modules/constants.js";
 import getElement from "../modules/getElement.js";
 import sleep from "../modules/sleep.js";
 import Storage from '../chrome/Storage.js';
@@ -13,7 +13,7 @@ function add(text, completed = false, index) {
 
   if (!completed) element.innerHTML = `<p>${text}</p>`;
   else element.innerHTML = `<p class="completed">${text}</p>`;
-  element.innerHTML += `<button>${DELETE_TODO_ICON}</button>`;
+  element.innerHTML += `<button>${DELETE_ICON}</button>`;
 
   element.addEventListener("click", async (e) => {
     const elementName = e.target.localName;

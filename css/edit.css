@@ -22,6 +22,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Quicksand-Medium;
 }
 
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+svg * {
+  pointer-events: none;
+}
+
 .main-container {
   width: 95%;
   padding: 20px 0;
@@ -48,6 +58,8 @@ h1, h2, h3, h4, h5, h6 {
 .draggable-list li {
   background-color: #252525;
   color: #fff;
+  display: grid;
+  grid-template-columns: 90% 10%;
 }
 
 .draggable-list li:not(:last-of-type) {
