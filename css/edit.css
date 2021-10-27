@@ -62,11 +62,15 @@ svg * {
   grid-template-columns: 90% 10%;
 }
 
+.draggable-list li.drag-start {
+  opacity: 0.35;
+}
+
 .draggable-list li:not(:last-of-type) {
   border-bottom: 1px solid #7e7e7e;
 }
 
-.draggable-list li.over .draggable {
+.draggable-list li.over {
   background-color: #494949;
 }
 

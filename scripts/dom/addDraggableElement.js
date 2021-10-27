@@ -5,6 +5,7 @@ import {
   dragLeave,
   dragOver,
   dragStart,
+  dragEnd
 } from "../modules/drag.js";
 import { DELETE_ICON, KEYS } from "../modules/constants.js";
 import Storage from "../chrome/Storage.js";
@@ -39,6 +40,7 @@ export default async function addDraggableElement(data, container, type) {
     addListener(li, "drop", dragDrop);
     addListener(li, "dragenter", dragEnter);
     addListener(li, "dragleave", dragLeave);
+    addListener(li, "dragend", dragEnd);
     // div
     addListener(div, "dragstart", dragStart);
 

@@ -96,7 +96,9 @@ import { openContentForFooter, overlayModal, addAccounts } from './dom/footer.js
 
 // options for adding or removing explicit jokes
 // event is fired when there is a right click on the jokes container
-$('.section.jokes').addEventListener('contextmenu', async e => {
+$('.section.jokes').addEventListener('contextmenu', changeExplictStatus);
+
+async function changeExplictStatus(e) {
   e.preventDefault();
 
   const prev = $('.is-safe-container');
@@ -128,30 +130,34 @@ $('.section.jokes').addEventListener('contextmenu', async e => {
   element.style.left = `${x}px`;
 
   document.body.appendChild(element);
-})
+} 
 
 // add a new joke when user double click on the container
-$('.section.jokes').addEventListener('dblclick', () => {
+$('.section.jokes').addEventListener('dblclick', changeJoke);
+
+function changeJoke() {
   addJokes();
-})
+}
 
 // removing the custom menu if opened
-$('.section.jokes').addEventListener('click', () => {
+$('.section.jokes').addEventListener('click', removeContextMenu);
+function removeContextMenu() {
   const prev = $('.is-safe-container');
   if (prev) {
     prev.removeEventListener('click', changeSafeStatus);
     prev.remove();
   }
-})
+}
 
 $('.apps').addEventListener('click', openContentForFooter);
 $('.accounts').addEventListener('click', openContentForFooter);
 
 // removing the overlay when the user clicks on it
-overlayModal.addEventListener('click', (e) => {
+overlayModal.addEventListener('click', removeOverlayModal);
+function removeOverlayModal(e) {
   if (e.target.classList.contains('overlay-modal'))
     e.target.style.display = 'none';
-})
+}
 
 // preventing right click on the overlay modal
 overlayModal.addEventListener('contextmenu', (e) => {
@@ -160,7 +166,8 @@ overlayModal.addEventListener('contextmenu', (e) => {
 
 // toggling between full and normal size screen
 const toggleBtn = $('footer .toggle input');
-toggleBtn.addEventListener('change', e => {
+toggleBtn.addEventListener('change', toggleBtnFunction);
+function toggleBtnFunction(e) {
   const checked = e.target.checked;
   console.log(checked)
   if (checked) {
@@ -171,4 +178,4 @@ toggleBtn.addEventListener('change', e => {
     $('.main-container').style.opacity = 1;
     $('.img-container .overlay').style.opacity = 1;
   }
-})
+}

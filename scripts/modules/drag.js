@@ -8,6 +8,8 @@ let dragStartInfo = {
 };
 
 export function dragStart() {
+  const parentLI = this.parentElement;
+  parentLI.classList.add('drag-start')
   dragStartInfo.index = +this.closest('li').getAttribute('data-index');
   dragStartInfo.type = this.closest('li').getAttribute('data-type');
 }
@@ -30,14 +32,21 @@ export async function dragDrop() {
     type: this.getAttribute('data-type')
   };
   this.classList.remove('over');
-
-  if (dragStartInfo.type !== dragEndInfo.type)
-    return;
-
   reorder(dragStartInfo, dragEndInfo);
 }
 
+export function dragEnd() {
+  const element = document.querySelector(`.d-${dragStartInfo.type} li[data-index="${dragStartInfo.index}"]`);
+  element.removeAttribute('class');
+}
+
 async function reorder(startInfo, endInfo) {
+  if (startInfo.type !== endInfo.type)
+    return;
+
+  if (startInfo.index === endInfo.index)
+    return;
+
   const type = startInfo.type;
   const index1 = startInfo.index;
   const index2 = endInfo.index;
