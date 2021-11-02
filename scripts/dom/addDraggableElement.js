@@ -47,8 +47,6 @@ export default async function addDraggableElement(data, container, type) {
     li.appendChild(div);
     li.appendChild(btn);
     container.appendChild(li);
-
-    DELETE_ICON
   });
 }
 
@@ -77,6 +75,10 @@ async function deleteCurrentElement() {
   const container = this.parentElement.parentElement;
   data.splice(index, 1);
   Storage.set(type, data);
+
+  if (type === "shortcuts") {
+    data = data.map(d => d.name);
+  }
 
   container.innerHTML = '';
   await addDraggableElement(data, container, type);
