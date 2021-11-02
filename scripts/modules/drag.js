@@ -48,8 +48,8 @@ async function reorder(startInfo, endInfo) {
     return;
 
   const type = startInfo.type;
-  const index1 = startInfo.index;
-  const index2 = endInfo.index;
+  const startIndex = startInfo.index;
+  const endIndex = endInfo.index;
 
   let data = await Storage.get(type);
 
@@ -58,15 +58,12 @@ async function reorder(startInfo, endInfo) {
 
   data = data[type];
 
-  if (data[index1] === undefined || data[index2] === undefined)
+  if (data[startIndex] === undefined || data[endIndex] === undefined)
     return;
 
-  let temp = data[index1];
-  data[index1] = data[index2];
-  data[index2] = temp;
+  data = shiftElements(data, startIndex, endIndex);
 
   Storage.set(type, data);
-
   const parent = $(`.draggable-list.d-${type}`);
   parent.innerHTML = '';
 
@@ -74,4 +71,22 @@ async function reorder(startInfo, endInfo) {
     data = data.map((s) => s.name);
 
   addDraggableElement(data, parent, type);
+}
+
+function shiftElements(data, startIndex, endIndex) {
+  if (startIndex < endIndex) {
+    const startElem = data[startIndex];
+    for (let i = startIndex + 1; i <= endIndex; i++)
+      data[i-1] = data[i];
+    data[endIndex] = startElem;
+  }
+
+  else if (startIndex > endIndex) {
+    const startElem = data[startIndex];
+    for (let i = startIndex - 1; i >= endIndex; i--)
+      data[i+1] = data[i];
+    data[endIndex] = startElem;
+  }
+
+  return data;
 }
