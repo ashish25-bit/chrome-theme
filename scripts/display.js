@@ -173,9 +173,11 @@ function toggleBtnFunction(e) {
   if (checked) {
     $('.main-container').style.opacity = 0;
     $('.img-container .overlay').style.opacity = 0;
+    $('.main-container').style.pointerEvents = 'none';
   }
   else {
     $('.main-container').style.opacity = 1;
     $('.img-container .overlay').style.opacity = 1;
+    $('.main-container').style.pointerEvents = 'auto';
   }
 }
