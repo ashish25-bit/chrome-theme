@@ -14,4 +14,4 @@ import Storage from "./chrome/Storage.js";
 
   container = $(".draggable-list.d-shortcuts");
   addDraggableElement(shortcuts, container, "shortcuts");
-})();''
+})();

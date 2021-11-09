@@ -28,6 +28,15 @@ button {
   border: none;
 }
 
+input {
+  border: none;
+  outline: none;
+}
+
+button, input, ::placeholder {
+  font-family: Poppins-Regular;
+}
+
 svg * {
   pointer-events: none;
 }
@@ -59,7 +68,7 @@ svg * {
   background-color: #252525;
   color: #fff;
   display: grid;
-  grid-template-columns: 90% 10%;
+  grid-template-columns: 80% 10% 10%;
 }
 
 .draggable-list li.drag-start {
@@ -77,4 +86,11 @@ svg * {
 .draggable {
   cursor: pointer;
   padding: 15px;
+}
+
+.draggable-list li input[type='text'] {
+  padding: 11px 0px;
+  padding-left: 15px;
+  background: #787878;
+  color: #fff;
 }
