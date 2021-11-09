@@ -1,6 +1,7 @@
 import { $ } from '../modules/constants.js';
 import addDraggableElement from '../dom/addDraggableElement.js';
 import Storage from "../chrome/Storage.js";
+import shiftElements from '../modules/shiftElements.js';
 
 let dragStartInfo = {
   index: null,
@@ -38,6 +39,9 @@ export async function dragDrop() {
 export function dragEnd() {
   const element = document.querySelector(`.d-${dragStartInfo.type} li[data-index="${dragStartInfo.index}"]`);
   element.removeAttribute('class');
+
+  dragStartInfo.index = null;
+  dragStartInfo.type = null;
 }
 
 async function reorder(startInfo, endInfo) {
@@ -71,22 +75,4 @@ async function reorder(startInfo, endInfo) {
     data = data.map((s) => s.name);
 
   addDraggableElement(data, parent, type);
-}
-
-function shiftElements(data, startIndex, endIndex) {
-  if (startIndex < endIndex) {
-    const startElem = data[startIndex];
-    for (let i = startIndex + 1; i <= endIndex; i++)
-      data[i-1] = data[i];
-    data[endIndex] = startElem;
-  }
-
-  else if (startIndex > endIndex) {
-    const startElem = data[startIndex];
-    for (let i = startIndex - 1; i >= endIndex; i--)
-      data[i+1] = data[i];
-    data[endIndex] = startElem;
-  }
-
-  return data;
 }
