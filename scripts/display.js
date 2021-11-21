@@ -155,8 +155,16 @@ $('.accounts').addEventListener('click', openContentForFooter);
 // removing the overlay when the user clicks on it
 overlayModal.addEventListener('click', removeOverlayModal);
 function removeOverlayModal(e) {
-  if (e.target.classList.contains('overlay-modal'))
+  if (e.target.classList.contains('overlay-modal')) {
+    const nodes = e.target.childNodes;
+    for (const node of nodes)
+      node.remove();
+  }
+
+  if (e.target.classList.contains('overlay-modal')) {
+    e.target.removeAttribute('data-active-tab');
     e.target.style.display = 'none';
+  }
 }
 
 // preventing right click on the overlay modal
@@ -179,5 +187,16 @@ function toggleBtnFunction(e) {
     $('.main-container').style.opacity = 1;
     $('.img-container .overlay').style.opacity = 1;
     $('.main-container').style.pointerEvents = 'auto';
+  }
+}
+
+window.onkeyup = function(e) {
+  if (e.code !== "Escape")
+    return;
+
+  const overlayModal = $('.overlay-modal');
+
+  if (overlayModal && overlayModal.childNodes.length !== 0) {
+    overlayModal.click();
   }
 }
