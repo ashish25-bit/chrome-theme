@@ -105,22 +105,6 @@ svg * {
   margin-bottom: 10px;
 }
 
-.section.cryptoprice .content {
-  color: #fff;
-  text-transform: uppercase;
-  padding: 20px;
-}
-
-.section.cryptoprice .content h3 {
-  padding-bottom: 5px;
-  border-bottom: 1px solid #484747;
-  margin-bottom: 5px;
-}
-
-.section.cryptoprice .content p:not(:last-of-type) {
-  margin-bottom: 20px;
-}
-
 .overlay-modal {
   width: var(--container-width);
   height: 100vh;

@@ -14,7 +14,6 @@ import Storage from './chrome/Storage.js';
 import getElement from "./modules/getElement.js";
 import addGmail from "./dom/addGmail.js";
 import addShortcuts from "./dom/addShortcuts.js";
-import addCrytoPrice from "./dom/addCryptoPrice.js";
 
 import { openContentForFooter, overlayModal, addAccounts } from './dom/footer.js';
 
@@ -62,9 +61,6 @@ import { openContentForFooter, overlayModal, addAccounts } from './dom/footer.js
 
   // add jokes
   addJokes();
-
-  // add crypto price
-  addCrytoPrice();
 
   chrome.storage.onChanged.addListener(changes => {
     if (changes.hasOwnProperty(KEYS.todos)) {

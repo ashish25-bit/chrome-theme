@@ -39,6 +39,7 @@ Object.freeze(KEYS);
 export const JOKES_API_URL = "https://v2.jokeapi.dev/joke/Any";
 export const JOKES_API_URL_SAFE =
   "https://v2.jokeapi.dev/joke/Any?blacklistFlags=explicit";
+export const JOKES_API_URL_EXTRA = "https://geek-jokes.sameerkumar.website/api?format=json";
 export const FALLBACK_JOKE = [
   "What's the difference between a feminist and a grenade?",
   "The grenade actually accomplishes something when it triggers.",

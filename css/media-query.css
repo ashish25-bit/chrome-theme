@@ -14,8 +14,7 @@
 }
 
 @media only screen and (max-width: 520px) {
-  .section.todo,
-  .section.cryptoprice {
+  .section.todo {
     display: none;
   }
   footer button {
