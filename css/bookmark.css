@@ -12,6 +12,9 @@
   padding: 10px;
   margin-bottom: 10px;
 }
+.section.bookmarks > .content a {
+  background-position-y: center;
+}
 
 .section.bookmarks .bookmark {
   background-color: var(--section-elements-background-color);

@@ -76,9 +76,17 @@ async function deleteTodo(index) {
 
 export default function addTodo(data) {
   const parent = $(".todo .content");
-  if (!data || data.length === 0) return;
+  if (!data) return;
 
   parent.innerHTML = "";
+  if (data.length === 0) {
+    const div = getElement( {classes: ['list']} );
+    div.innerText = "No todos";
+
+    parent.appendChild(div);
+    return;
+  }
+
   let index = 0;
   for (const { text, completed } of data) {
     add(text, completed, index);

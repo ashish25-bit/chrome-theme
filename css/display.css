@@ -48,7 +48,7 @@ button {
   cursor: pointer;
 }
 
-svg * {
+svg, svg * {
   pointer-events: none;
 }
 
@@ -91,6 +91,9 @@ svg * {
 
 .section.shortcuts {
   grid-column: col-2 / span col-end;
+}
+.section.todo {
+  grid-column: col-start / span col-3;
 }
 
 .section::-webkit-scrollbar {

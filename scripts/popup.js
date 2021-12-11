@@ -19,7 +19,7 @@ const emailInput = $(".input-account input");
     );
   });
 
-  emailInput.focus();
+  todoInput.focus();
 })();
 
 $(".edit").addEventListener("click", () => {

@@ -11,7 +11,10 @@
   border-radius: 5px;
   position: relative;
   display: grid;
+  grid-template-columns: 90% 10%;
   transition: all 0.4s ease-out;
+  align-items: center;
+  gap: 10px;
 }
 
 .todo .list.remove {
@@ -21,7 +24,6 @@
 
 .todo .list p {
   cursor: pointer;
-  width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -34,15 +36,4 @@
 
 .todo .list:hover {
   background-color: var(--section-elements-background-color-hover);
-}
-
-.todo .list button {
-  position: absolute;
-  top: calc(50% + 3px);
-  transform: translateY(-50%);
-  right: 15px;
-  cursor: pointer;
-}
-.todo .list svg {
-  pointer-events: none;
 }

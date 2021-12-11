@@ -15,30 +15,27 @@ export async function addJokes() {
   const explicit = await Storage.get(KEYS.explicit);
   let url = JOKES_API_URL_EXTRA;
 
-  // if (!explicit || !explicit[KEYS.explicit])
-  //   url = JOKES_API_URL_SAFE;
-  // else
-  //   url = JOKES_API_URL;
+  if (!explicit || !explicit[KEYS.explicit])
+    url = JOKES_API_URL_SAFE;
+  else
+    url = JOKES_API_URL;
 
   try {
     const res = await get(url);
 
-    // if (res.type === "twopart") {
-    //   joke = [res.setup, res.delivery];
-    // }
-    // else if (res.type === "single") {
-    //   joke = [res.joke]
-    // }
+    if (res.type === "twopart") {
+      joke = [res.setup, res.delivery];
+    }
+    else if (res.type === "single") {
+      joke = [res.joke]
+    }
 
-    // if (res.flags.explicit)
-    //   joke.push('(Explicit)');
-    // else if (res.flags.racist)
-    //   joke.push('(Racist)');
-    // else if (res.flags.sexist)
-    //   joke.push('(Sexist)');
-
-    joke = [res.joke];
-    await get(JOKES_API_URL)
+    if (res.flags.explicit)
+      joke.push('(Explicit)');
+    else if (res.flags.racist)
+      joke.push('(Racist)');
+    else if (res.flags.sexist)
+      joke.push('(Sexist)');
   }
   catch (err) {
     console.log(err);
