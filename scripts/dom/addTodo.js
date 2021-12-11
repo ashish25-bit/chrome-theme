@@ -1,4 +1,4 @@
-import { $, DELETE_ICON, KEYS } from "../modules/constants.js";
+import { $, DELETE_ICON, EDIT_TODO_ICON, KEYS } from "../modules/constants.js";
 import getElement from "../modules/getElement.js";
 import sleep from "../modules/sleep.js";
 import Storage from '../chrome/Storage.js';
@@ -18,7 +18,8 @@ function add(text, completed = false, index) {
 
   if (!completed) element.innerHTML = `<p>${text}</p>`;
   else element.innerHTML = `<p class="completed">${text}</p>`;
-  element.innerHTML += `<button>${DELETE_ICON}</button>`;
+  element.innerHTML += `<button data-delete>${DELETE_ICON}</button>`;
+  element.innerHTML += `<button data-edit>${EDIT_TODO_ICON}</button>`;
 
   addListener(element, "click", clickOnTodo);
   addListener(element, "dragstart", dragStart);
@@ -38,11 +39,80 @@ async function clickOnTodo(e) {
 
   else if (elementName === 'button') {
     const index = e.target.parentElement.getAttribute('data-index');
-    const element = e.target.parentElement;
-    element.classList.add('remove')
 
-    await sleep(700);
-    deleteTodo(index);
+    if (e.target.hasAttribute('data-delete')) {
+      const element = e.target.parentElement;
+      element.classList.add('remove');
+
+      await sleep(700);
+      deleteTodo(index);
+    }
+    else if (e.target.hasAttribute('data-edit')) {
+      await editCurrentElement(e.target, index);
+    }
+
+  }
+}
+
+async function editCurrentElement(btn, index) {
+  const mainElement = btn.previousElementSibling?.previousElementSibling;
+  const parent = btn.parentElement;
+
+  if (!mainElement || !parent)
+    return;
+
+  let data = await Storage.get(KEYS.todos);
+  if (!data)
+    return;
+
+  data = data[KEYS.todos];
+  if (index >= data.length)
+    return;
+
+  const inputElement = getElement({
+    type: "input",
+    attrs: [
+      { key: "type", value: "text" },
+    ],
+  });
+
+  mainElement.remove();
+
+  inputElement.value = data[index].text;
+  addListener(inputElement, 'keyup', onKeyupHandler);
+
+  parent.prepend(inputElement);
+  inputElement.focus();
+}
+
+async function onKeyupHandler(e) {
+  const parent = e.target.parentElement;
+  if (!parent)
+    return;
+
+  const index = +parent.getAttribute('data-index');
+  if (index === undefined || isNaN(index))
+    return;
+
+  let data = await Storage.get(KEYS.todos);
+  if (!data)
+    return;
+
+  data = data[KEYS.todos];
+  if (index >= data.length)
+    return;
+
+  if (e.code === 'Escape') {
+    addTodo(data);
+  }
+  else if (e.code === 'Enter') {
+    let value = e.target.value.trim();
+
+    if (value.length === 0)
+      return;
+
+    data[index].text = value;
+    Storage.set(KEYS.todos, data);
   }
 }
 
